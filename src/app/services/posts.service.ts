@@ -42,14 +42,14 @@ export class PostsService {
     this.emitPost();
   }
 
-  public addLove(index: number) {
+  addLove(index: number) {
     const loveIts = this.posts[index].loveIts;
     this.posts[index].loveIts = loveIts + 1;
     this.savePosts();
     this.emitPost();
   }
 
-  public subLove(index: number) {
+  subLove(index: number) {
     const loveIts = this.posts[index].loveIts;
     this.posts[index].loveIts = loveIts - 1;
     this.savePosts();

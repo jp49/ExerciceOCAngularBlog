@@ -20,11 +20,11 @@ export class PostListItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  public onAddLove(index: number) {
+  onAddLove(index: number) {
     this.postService.addLove(index);
   }
 
-  public onSubLove(index: number) {
+  onSubLove(index: number) {
     this.postService.subLove(index);
   }
 
