@@ -1,0 +1,17 @@
+<div [ngClass]="{
+  'list-group-item': true,
+  'list-group-item-success': loveIts > 0,
+  'list-group-item-danger': loveIts < 0
+  }">
+
+  <div style="width:100%">
+    <p style="float:left"><strong>{{ title }}</strong></p>
+    <p style="text-align:right">{{ created_at | date: 'short'}}</p>
+  </div>
+  <p>{{ content }}</p>
+  <button class="btn btn-default pull-right" (click)="onDeletePost(indexOf)" title="supprimer le post">
+    <span class="glyphicon glyphicon-minus"></span>
+  </button>
+  <button type="button" class="btn btn-success" (click)="onAddLove(indexOf)">Love it!</button>
+  <button type="button" class="btn btn-danger" (click)="onSubLove(indexOf)">Don't love it!</button>
+</div>
