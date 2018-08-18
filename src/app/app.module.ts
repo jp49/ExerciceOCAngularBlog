@@ -8,13 +8,13 @@ import { HeaderComponent } from './header/header.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NewPostComponent } from './new-post/new-post.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {PostsService} from './services/posts.service';
 
 const appRoutes: Routes = [
-
   { path: 'posts', component: PostListComponent},
-  { path: '', component: PostListComponent},
   { path: 'new', component: NewPostComponent},
-  { path: '**', component: PostListComponent}
+  { path: '**', component: PostListComponent},
+  { path: '', component: PostListComponent}
 ]
 
 @NgModule({
@@ -31,7 +31,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
